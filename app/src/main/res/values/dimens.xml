@@ -1,0 +1,18 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="popup_height">600dp</dimen>
+    <dimen name="chathead_height">55dp</dimen>
+    <dimen name="chathead_margin_top">20dp</dimen>
+
+    <dimen name="blink_container_width">180dp</dimen>
+    <dimen name="blink_container_height">180dp</dimen>
+    <dimen name="chathead_left_padding">5dp</dimen>
+    <dimen name="chathead_right_padding">5dp</dimen>
+    <dimen name="top_overlay_height">90dp</dimen>
+    <dimen name="chathead_padding_boundary">4dp</dimen>
+    <dimen name="top_overlay_touch_height">100dp</dimen>
+    <dimen name="idle_state_movement">15dp</dimen>
+    <dimen name="idle_state_height">20dp</dimen>
+</resources>

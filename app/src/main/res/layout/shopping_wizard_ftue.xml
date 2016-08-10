@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/black_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/chathead_container"
+        android:layout_width="@dimen/chathead_height"
+        android:layout_height="@dimen/chathead_height"
+        android:layout_marginLeft="@dimen/chathead_left_padding"
+        android:layout_marginTop="@dimen/chathead_margin_top">
+
+        <ImageView
+            android:id="@+id/chathead_img"
+            android:layout_width="@dimen/chathead_height"
+            android:layout_height="@dimen/chathead_height"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shopping_wizard_mat_circle_blue"
+            android:padding="13dp"
+            android:src="@drawable/shopping_wizard_icon" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shopping_wizard_mat_circle_camera"
+            android:src="@drawable/shopping_wizard_helpchat_icon" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/heading_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chathead_container"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Welcome to "
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/heading_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading_one"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="Helpchat Shopping Assistant "
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/dummy_img"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_below="@+id/heading_two"
+        android:layout_margin="@dimen/chathead_left_padding"
+        android:src="@drawable/shopping_wizard_dummy_coupon" />
+
+    <TextView
+        android:id="@+id/heading_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dummy_img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/chathead_left_padding"
+        android:layout_marginRight="@dimen/chathead_right_padding"
+        android:layout_marginTop="47dp"
+        android:gravity="center"
+        android:text="We'll help you find the best deals for all your favourite apps "
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/lets_get_started_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading_three"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/red_button"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="44dp"
+        android:paddingRight="32dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/lets_get_started_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="-12dp"
+            android:gravity="center"
+            android:text="Let's get started"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+        <!--app:typeface="@string/typeface_regular"-->
+        <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="10dp">
+
+            <View
+                android:id="@+id/grid_blinking_dot"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="center"
+                android:background="@drawable/circle_white" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/reming_me_later_button"
+        android:layout_width="182dp"
+        android:layout_height="43dp"
+        android:layout_below="@+id/lets_get_started_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="Remind me later"
+        android:textColor="@color/theme_accent"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

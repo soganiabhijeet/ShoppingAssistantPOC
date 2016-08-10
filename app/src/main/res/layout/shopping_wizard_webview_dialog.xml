@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:paddingRight="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/chathead_left_padding"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/chathead_margin_top">
+
+        <RelativeLayout
+            android:id="@+id/webview_chathead"
+            android:layout_width="@dimen/chathead_height"
+            android:layout_height="@dimen/chathead_height"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            >
+
+            <ImageView
+                android:id="@+id/chathead_img"
+                android:layout_width="@dimen/chathead_height"
+                android:layout_height="@dimen/chathead_height"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shopping_wizard_mat_circle_blue"
+                android:padding="13dp"
+                android:src="@drawable/shopping_wizard_icon" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shopping_wizard_mat_circle_camera"
+                android:src="@drawable/shopping_wizard_helpchat_icon" />
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:id="@+id/webview_title_text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:text="Top two deals for you"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/web_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="4000dp"
+        android:layout_marginTop="10dp">
+
+
+        <im.delight.android.webview.AdvancedWebView
+            android:id="@+id/web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+

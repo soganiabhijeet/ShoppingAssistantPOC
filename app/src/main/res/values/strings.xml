@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="accessibility_title">&#x261B;&#x261B; My Application &#x261A;&#x261A;</string>
+    <string name="accessibility_description">Please switch it \'ON\' &#x279a;&#x279a;&#x279a;&#x279a; \n\n
+Helpchat can then unlock these cool features for you:\n
+ - Track data usage and save 20% data\n
+ - Show your main balance\n
+ - Show data balance and validity\n
+ - Alert you when apps are stealing data\n
+ - Alert you when data balance is low\n\nYou may receive a standard warning. Don`t worry about it. Helpchat will never collect any personal information.</string>
+</resources>

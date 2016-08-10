@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chathead_relativelayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/blink_container"
+        android:layout_width="@dimen/blink_container_width"
+        android:layout_height="@dimen/blink_container_height"
+        android:gravity="center">
+
+        <View
+            android:id="@+id/shopping_avatar_container"
+            android:layout_width="@dimen/chathead_height"
+            android:layout_height="@dimen/chathead_height"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shopping_wizard_blink_blue"
+            android:gravity="center"></View>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/chathead_height"
+        android:layout_height="@dimen/chathead_height"
+        android:id="@+id/chathead_container"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/chathead_img"
+            android:layout_width="@dimen/chathead_height"
+            android:layout_height="@dimen/chathead_height"
+
+            android:layout_centerInParent="true"
+            android:background="@drawable/shopping_wizard_mat_circle_blue"
+            android:padding="13dp"
+            android:src="@drawable/shopping_wizard_icon" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shopping_wizard_mat_circle_camera"
+            android:src="@drawable/shopping_wizard_helpchat_icon" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
