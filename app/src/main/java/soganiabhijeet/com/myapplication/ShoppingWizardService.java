@@ -577,7 +577,7 @@ public class ShoppingWizardService extends Service {
                 });
 
         Subscription subscribe = Observable.just(1)
-                .observeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.computation())
                 .subscribe(new Action1<Integer>() {
                     @Override

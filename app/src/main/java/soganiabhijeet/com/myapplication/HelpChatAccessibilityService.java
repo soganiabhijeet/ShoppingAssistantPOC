@@ -18,53 +18,49 @@ import android.widget.TextView;
 public class HelpChatAccessibilityService extends AccessibilityService {
 
     private static final String TAG = HelpChatAccessibilityService.class.getSimpleName();
-    private static final String PKG_PHONE_APP = "com.android.chrome";
+    private static final String PKG_CHROME_APP = "com.android.chrome";
     private static final String SYSTEM_DIALOG = "alert";
 
     private static boolean landingActivityVisible = false;
-
+    private static String FOREGROUND_APP = "";
+    private static String CHROME_URL = "";
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-
-        //getChromeUrl(getRootInActiveWindow());
-        /*if (event == null || event.getSource() == null || TextUtils.isEmpty(event.getSource().getViewIdResourceName())) {
-            return;
+        if (!FOREGROUND_APP.equals(event.getPackageName().toString())) {
+            debug("Current foreground app is " + event.getPackageName());
+            FOREGROUND_APP = event.getPackageName().toString();
         }
-        debug("Event type " + event.getEventType());
-        debug("Event resource id " + event.getSource().findAccessibilityNodeInfosByViewId("com.android.chrome:id/url_bar"));
-        List<AccessibilityNodeInfo> accessibilityNodeInfos=event.getSource().findAccessibilityNodeInfosByViewId("lst-ib");
-        for(AccessibilityNodeInfo accessibilityNodeInfo:accessibilityNodeInfos){
-            debug("getContentDescription " +accessibilityNodeInfo.getContentDescription());
-        }*/
-        debug("Event type " + event.getEventType());
-        getChromeUrl(getRootInActiveWindow());
+        if (PKG_CHROME_APP.equals(event.getPackageName())) {
+            getChromeUrl(getRootInActiveWindow());
+        }
+
     }
 
     public void getChromeUrl(AccessibilityNodeInfo nodeInfo) {
-        //Use the node info tree to identify the proper content.
-        //For now we'll just log it to logcat.
-        Log.d(TAG, toStringHierarchy(nodeInfo, 0));
+        findInChildren(nodeInfo, 0);
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
-    private String toStringHierarchy(AccessibilityNodeInfo info, int depth) {
+    private String findInChildren(AccessibilityNodeInfo info, int depth) {
         if (info == null) return "";
 
-        String result = "depth is " + depth;
+        String result = "";
 
-        if ("com.android.chrome:id/url_bar".equals(info.getViewIdResourceName())) {
+        if ("com.android.chrome:id/url_bar".equals(info.getViewIdResourceName()) && !CHROME_URL.equals(info.getText().toString())) {
             debug("Url is " + info.getText());
+
+            CHROME_URL = info.getText().toString();
         }
         for (int i = 0; i < depth; i++) {
-            result += "  ";
+            result += "";
         }
 
-        //result += info.toString();
+        //result += info.getViewIdResourceName();
 
         for (int i = 0; i < info.getChildCount(); i++) {
-            result += "\n" + toStringHierarchy(info.getChild(i), depth + 1);
+            result += "\n" + findInChildren(info.getChild(i), depth + 1);
         }
 
         return result;
